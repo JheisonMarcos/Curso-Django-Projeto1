@@ -23,11 +23,24 @@ from django.urls import path
 # HTTP REQUEST
 
 
-def my_view(request): 
-    return HttpResponse('Uma Linda String')
+def home(request): 
+    return HttpResponse('HOME')
+
+
+
+def sobre(request): 
+    return HttpResponse('sobre')
+
+
+
+def contato(request): 
+    return HttpResponse('contato')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('outra-coisa-qualquer/', my_view)
+    path('', home), # HOME
+    path('sobre/', sobre), # /sobre/
+    path('contato/', contato),  # /contato/
 ]
+
