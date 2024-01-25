@@ -1,13 +1,13 @@
-# from django.shortcuts import render
-
+from django.shortcuts import render
 from django.http import HttpResponse
 
 
 # Create your views here.
 
-
 def home(request):
-    return HttpResponse('HOME 1')
+    return render(request, 'recipes/home.html', contex={
+        'name': 'Jheison Francelino',
+    })
 
 
 def sobre(request):
@@ -15,4 +15,4 @@ def sobre(request):
 
 
 def contato(request):
-    return HttpResponse('contato 1')
+    return render(request, 'temp.html')
