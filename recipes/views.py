@@ -6,13 +6,13 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def home(request): 
+def home(request):
     return HttpResponse('HOME 1')
 
 
-def sobre(request): 
+def sobre(request):
     return HttpResponse('sobre 1')
 
 
-def contato(request): 
+def contato(request):
     return HttpResponse('contato 1')
