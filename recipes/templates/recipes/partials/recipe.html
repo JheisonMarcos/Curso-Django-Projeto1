@@ -3,27 +3,28 @@
         <img src="https://placehold.co/1280x720/blue/gray.png" alt="Temporário">
     </div>
     <div class="recipe-title-container">
-        <h2 class="recipe-title">Lorem ipsum dolor sit amet.</h2>
+        <h2 class="recipe-title">{{ recipe.title }}</h2>
     </div>
 
     <div class="recipe-author">
         <span class="recipe-author-item">
             <i class="fas fa-user"></i>
-            Jheison Francelino
+            {{ recipe.author.first_name }} {{ recipe.author.last_name }}
         </span>
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
-            27/01/2024 às 18:39
+            {{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}
         </span>
         <span class="recipe-author-item">
             <a href="/recipes/category/café-da-manha">
                 <i class="fas fa-layer-group"></i>
-                <span>Café da manhã</span>
+                <span>{{ recipe.category.name }}</span>
             </a>
         </span>
     </div>
+
     <div class="recipe-content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab blanditiis dicta aperiam totam, ratione natus placeat soluta molestias. Rem delectus ea sed doloribus, inventore animi similique tempore velit vel id.</p>
+        <p>{{ recipe.description }}</p>
 
     </div>
     
@@ -33,13 +34,13 @@
 
             <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Preparo</h3>
             <div class="recipe-meta-text">
-                0 Minutos 
+                {{ recipe.preparation_time }} {{ recipe.preparation_time_unit }} 
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
             <h3 class="recipe-meta-title"><i class="fas fa-pizza-slice"></i> Porções</h3>
             <div class="recipe-meta-text">
-                0 Porções
+                {{ recipe.servings }} {{ recipe.servings_unit }}
             </div>
         </div>
     </div>
